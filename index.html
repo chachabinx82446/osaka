@@ -1,0 +1,1029 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>日本關西七日遊｜互動式行程 (JR Pass優化版)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', 'Noto Sans TC', sans-serif; }
+        .tab-active { border-color: #2563eb; color: #2563eb; font-weight: 600; }
+        .content-section { display: none; }
+        .content-section.active { display: block; }
+        .details-content { max-height: 0; overflow: hidden; transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1); }
+        .details-content.open { max-height: 1500px; }
+        .chevron { transition: transform 0.3s ease-in-out; }
+        .chevron.open { transform: rotate(180deg); }
+        .timeline-item { position: relative; padding-left: 2.5rem; padding-bottom: 2rem; border-left: 2px solid #e5e7eb; }
+        .timeline-item:last-child { border-left: 2px solid transparent; }
+        .timeline-icon { position: absolute; left: -1rem; top: 0; display: flex; align-items: center; justify-content: center; width: 2rem; height: 2rem; border-radius: 9999px; background-color: #fff; }
+        .badge { display:inline-block; padding: 0.15rem 0.5rem; border-radius: 9999px; font-size: 0.75rem; }
+        .badge-green { background: #DCFCE7; color:#166534; }
+        .badge-amber { background: #FEF3C7; color:#92400E; }
+        .badge-slate { background: #F1F5F9; color:#334155; }
+        .note { background: #F8FAFC; border-left: 4px solid #2563eb; }
+        .footnote { font-size: 0.875rem; color:#475569; }
+    </style>
+
+<!-- ===== SEO / Social ===== -->
+<meta name="description" content="日本關西七日遊：大阪、京都、奈良、神戶 7 天行程安排，交通、美食與景點一次整理，支援離線、可安裝、快速開地圖導覽。">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="icons/icon-192.png" type="image/png">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<meta property="og:type" content="website">
+<meta property="og:title" content="日本關西七日遊｜互動式行程 (JR Pass優化版)">
+<meta property="og:description" content="日本關西七日遊：大阪、京都、奈良、神戶 7 天行程安排，交通、美食與景點一次整理，支援離線、可安裝、快速開地圖導覽。">
+<meta property="og:image" content="assets/og-image.png">
+<meta property="og:locale" content="zh_TW">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="日本關西七日遊｜互動式行程 (JR Pass優化版)">
+<meta name="twitter:description" content="日本關西七日遊：大阪、京都、奈良、神戶 7 天行程安排，交通、美食與景點一次整理，支援離線、可安裝、快速開地圖導覽。">
+<meta name="theme-color" content="#0f172a">
+
+<!-- ===== PWA ===== -->
+<link rel="manifest" href="manifest.json">
+
+<!-- ===== JSON-LD ===== -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "日本關西七日遊｜互動式行程 (JR Pass優化版)",
+  "inLanguage": "zh-Hant",
+  "description": "日本關西七日遊：大阪、京都、奈良、神戶 7 天行程安排，交通、美食與景點一次整理，支援離線、可安裝、快速開地圖導覽。"
+}
+</script>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto max-w-5xl p-4 md:p-8">
+        <!-- Header -->
+        <header class="text-center mb-8">
+            <h1 class="text-4xl md:text-5xl font-bold text-gray-800 tracking-tight">日本關西七日遊</h1>
+            <p class="text-lg text-blue-600 mt-2 font-semibold">2025.10.05 - 2025.10.11</p>
+            <div class="mt-4 bg-green-100 border-l-4 border-green-500 text-green-700 p-4 rounded-md text-left space-y-2">
+                <p class="font-bold">✨ 優化說明</p>
+                <ul class="list-disc list-inside space-y-1">
+                    <li>長途的神戶日已安排於 <span class="font-bold">JR關西廣域鐵路周遊券</span> (5日) 有效期間內；奈良日則移至 Pass 到期後，整體節省交通成本。</li>
+                    <li>修正 <span class="font-bold">山陽新幹線</span> 可用規則與建議搭乘列車說明；補強私鐵/地鐵自費段提醒。</li>
+                    <li>更新 <span class="font-bold">大阪・關西世博 (Expo 2025)</span> 的開放時間與入場「時段預約」流程；新增夜間燈光秀資訊。</li>
+                    <li>補充 <span class="font-bold">USJ 超級任天堂世界™</span> 之「區域入場整理券 / Timed Entry」取得方式。</li>
+                    <li>新增「交通票券總整表」與「費用提醒」，便於行前一次搞定。</li>
+                </ul>
+            </div>
+            <p class="mt-3 footnote">＊JR關西廣域鐵路周遊券連續5日效期：建議使用日為 10/5（日）～ 10/9（四）。</p>
+        </header>
+
+        <!-- Tabs Navigation -->
+        <nav id="tabs" class="flex flex-wrap justify-center border-b border-gray-200 mb-8 -mx-4 px-4">
+            <button data-target="day1" class="tab-button py-3 px-3 sm:px-4 text-sm md:text-base text-gray-500 border-b-2 border-transparent hover:border-gray-300 hover:text-gray-700 transition-colors duration-200 tab-active">第 1 天</button>
+            <button data-target="day2" class="tab-button py-3 px-3 sm:px-4 text-sm md:text-base text-gray-500 border-b-2 border-transparent hover:border-gray-300 hover:text-gray-700 transition-colors duration-200">第 2 天</button>
+            <button data-target="day3" class="tab-button py-3 px-3 sm:px-4 text-sm md:text-base text-gray-500 border-b-2 border-transparent hover:border-gray-300 hover:text-gray-700 transition-colors duration-200">第 3 天</button>
+            <button data-target="day4" class="tab-button py-3 px-3 sm:px-4 text-sm md:text-base text-gray-500 border-b-2 border-transparent hover:border-gray-300 hover:text-gray-700 transition-colors duration-200">第 4 天</button>
+            <button data-target="day5" class="tab-button py-3 px-3 sm:px-4 text-sm md:text-base text-gray-500 border-b-2 border-transparent hover:border-gray-300 hover:text-gray-700 transition-colors duration-200">第 5 天</button>
+            <button data-target="day6" class="tab-button py-3 px-3 sm:px-4 text-sm md:text-base text-gray-500 border-b-2 border-transparent hover:border-gray-300 hover:text-gray-700 transition-colors duration-200">第 6 天</button>
+            <button data-target="day7" class="tab-button py-3 px-3 sm:px-4 text-sm md:text-base text-gray-500 border-b-2 border-transparent hover:border-gray-300 hover:text-gray-700 transition-colors duration-200">第 7 天</button>
+            <button data-target="prep" class="tab-button py-3 px-3 sm:px-4 text-sm md:text-base text-gray-500 border-b-2 border-transparent hover:border-gray-300 hover:text-gray-700 transition-colors duration-200">行前準備</button>
+        </nav>
+
+        <!-- Main Content -->
+        <main id="tab-content">
+            <!-- Day 1 -->
+            <div id="day1" class="content-section active">
+                <div class="bg-white rounded-2xl shadow-lg p-6 md:p-8">
+                    <h2 class="text-2xl font-bold mb-1">第1天：10/5 (週日)</h2>
+                    <p class="text-blue-600 font-medium text-lg mb-6">🛬 岡山抵達 → 大阪入住 <span class="badge badge-green">Pass第1天</span></p>
+                    
+                    <div class="timeline">
+                        <!-- Activity 1 -->
+                        <div class="timeline-item">
+                            <div class="timeline-icon shadow-md"><span class="text-xl">✈️</span></div>
+                            <h3 class="font-bold text-lg text-gray-700 mb-1">上午/下午 | 抵達與轉乘</h3>
+                            <p class="mb-2"><span class="font-semibold">12:50 - 16:30：</span>台灣虎航 IT714，桃園 (TPE) → 岡山 (OKJ)。</p>
+                            <p class="mb-2"><span class="font-semibold">16:30 - 17:30：</span>入境後至機場一樓外 2 號站牌，搭<span class="font-bold">機場利木津巴士</span>至 JR 岡山站西口。</p>
+                            <div class="collapsible mt-4 border border-gray-200 rounded-lg">
+                                <button class="toggle-button flex items-center justify-between w-full bg-blue-50 p-3 text-left font-semibold text-blue-800">
+                                    <span>🚌 交通工具 deep dive</span>
+                                    <svg class="chevron w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                                </button>
+                                <div class="details-content bg-white p-4 text-sm border-t border-gray-200">
+                                    <ul class="list-disc list-inside space-y-2">
+                                        <li><span class="font-semibold">路線:</span> 岡山機場 → JR岡山站西口</li>
+                                        <li><span class="font-semibold">票價:</span> 單程成人約 <span class="font-bold">760 日圓</span>；車程約 30 分鐘。站牌旁自動售票機購票。</li>
+                                        <li><span class="font-semibold">時刻表:</span> 抵達 16:30 後，可搭 17:00 左右班次，約 17:30 抵達 JR 岡山站。</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Activity 2 -->
+                        <div class="timeline-item">
+                            <div class="timeline-icon shadow-md"><span class="text-xl">🚄</span></div>
+                            <p class="mb-2"><span class="font-semibold">17:30 - 19:00：</span>至 JR 岡山站<span class="font-bold">綠色窗口</span>兌換並啟用 <span class="font-bold text-green-600">JR關西廣域鐵路周遊券 (5日)</span>。隨後搭乘<span class="font-bold">山陽新幹線</span>前往新大阪。</p>
+                            <div class="collapsible mt-4 border border-gray-200 rounded-lg">
+                                <button class="toggle-button flex items-center justify-between w-full bg-blue-50 p-3 text-left font-semibold text-blue-800">
+                                    <span>🚄 新幹線 & JR Pass 使用規則</span>
+                                    <svg class="chevron w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                                </button>
+                                <div class="details-content bg-white p-4 text-sm border-t border-gray-200">
+                                    <ul class="list-disc list-inside space-y-2">
+                                        <li><span class="font-semibold">涵蓋區間:</span> <span class="font-bold">新大阪 ⇄ 岡山</span> 的山陽新幹線可使用本券。</li>
+                                        <li><span class="font-semibold">搭乘建議:</span> 以 <span class="font-bold">Sakura / Hikari / Kodama</span> 為主；如需指定席，請於綠色窗口劃位。</li>
+                                        <li><span class="font-semibold">車程:</span> 約 45–50 分鐘；班次頻繁，約每 10–20 分一班。</li>
+                                        <li class="text-slate-600">＊實際可搭乘之列車別與是否可使用指定席，請以現場與官網最新規定為準。</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Activity 3 -->
+                        <div class="timeline-item">
+                            <div class="timeline-icon shadow-md"><span class="text-xl">🏨</span></div>
+                             <p class="mb-2"><span class="font-semibold">19:00 - 20:00：</span>新大阪 → (JR京都線) 大阪 → (JR大阪環狀線 外環) 鶴橋，步行至「ESLEAD酒店-大阪鶴橋」入住。</p>
+                             <div class="collapsible mt-4 border border-gray-200 rounded-lg">
+                                <button class="toggle-button flex items-center justify-between w-full bg-blue-50 p-3 text-left font-semibold text-blue-800">
+                                    <span>JR 轉乘小抄</span>
+                                    <svg class="chevron w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                                </button>
+                                <div class="details-content bg-white p-4 text-sm border-t border-gray-200">
+                                    <ul class="list-disc list-inside space-y-2">
+                                        <li><span class="font-semibold">路線:</span> 新大阪 → 大阪 → 鶴橋</li>
+                                        <li><span class="font-semibold">車程:</span> 約 20–25 分鐘。</li>
+                                        <li><span class="font-semibold">費用:</span> 由 JR Pass 覆蓋。</li>
+                                        <li><span class="font-semibold">訣竅:</span> 大阪站換乘時留意「大阪環狀線・外環(天王寺方向)」指示。</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Activity 4 -->
+                        <div class="timeline-item">
+                            <div class="timeline-icon shadow-md"><span class="text-xl">🌃</span></div>
+                            <h3 class="font-bold text-lg text-gray-700 mb-1">晚間 | 道頓堀美食與購物初探</h3>
+                            <p class="mb-2"><span class="font-semibold">20:00 - 22:00：</span>安頓好行李後搭地鐵前往難波/心齋橋。晚餐於道頓堀，之後逛 <span class="font-bold">心齋橋筋商店街</span>、<span class="font-bold">難波</span>、<span class="font-bold">Namba City</span> 等。</p>
+                            <div class="collapsible mt-4 border border-gray-200 rounded-lg">
+                                <button class="toggle-button flex items-center justify-between w-full bg-blue-50 p-3 text-left font-semibold text-blue-800">
+                                    <span>🚇 地鐵 & 票價提醒</span>
+                                    <svg class="chevron w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                                </button>
+                                <div class="details-content bg-white p-4 text-sm border-t border-gray-200">
+                                    <ul class="list-disc list-inside space-y-2">
+                                        <li><span class="font-semibold">路線:</span> 鶴橋 (大阪地下鐵千日前線) → 難波</li>
+                                        <li><span class="font-semibold">車程:</span> 約 6 分鐘。</li>
+                                        <li><span class="font-semibold">費用:</span> 單程成人約 240 日圓。<span class="text-red-600 font-bold">地鐵不適用 JR Pass。</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="collapsible mt-4 border border-gray-200 rounded-lg">
+                                <button class="toggle-button flex items-center justify-between w-full bg-orange-50 p-3 text-left font-semibold text-orange-800">
+                                    <span>🍽️ 晚餐選擇</span>
+                                    <svg class="chevron w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                                </button>
+                                <div class="details-content bg-white p-4 text-sm border-t border-gray-200">
+                                    <p class="font-bold mb-2">晚餐 (道頓堀)：</p>
+                                    <ul class="list-disc list-inside space-y-2">
+                                        <li><span class="font-semibold">美津の (Mizuno)：</span>米其林必比登的大阪燒名店。</li>
+                                        <li><span class="font-semibold">千房 (Chibo)：</span>連鎖大阪燒，鐵板料理多。</li>
+                                        <li><span class="font-semibold">一蘭拉麵：</span>24 小時營業，宵夜好選擇。</li>
+                                        <li><span class="font-semibold">達摩串炸：</span>庶民美食，醬汁只能沾一次。</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <p class="mt-4"><span class="font-semibold">22:00 後：</span>返回飯店休息。</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Food & Souvenirs -->
+                    <div class="mt-8 pt-6 border-t border-gray-200">
+                        <h3 class="text-xl font-bold text-orange-600 mb-4">🍽️ 美食與伴手禮亮點</h3>
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <h4 class="font-semibold text-lg mb-2">特色美食</h4>
+                                <ul class="list-disc list-inside space-y-2 text-gray-700">
+                                    <li><span class="font-bold">章魚燒：</span>元祖章魚燒 あっちち本舗</li>
+                                    <li><span class="font-bold">大阪燒：</span>千房</li>
+                                    <li><span class="font-bold">串炸：</span>達摩串炸</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-lg mb-2">推薦伴手禮</h4>
+                                <ul class="list-disc list-inside space-y-2 text-gray-700">
+                                    <li>老爺爺起司蛋糕</li>
+                                    <li>551 蓬萊肉包</li>
+                                    <li>固力果系列商品</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Day 2 (Kobe) -->
+            <div id="day2" class="content-section">
+                <div class="bg-white rounded-2xl shadow-lg p-6 md:p-8">
+                    <h2 class="text-2xl font-bold mb-1">第2天：10/6 (週一)</h2>
+                    <p class="text-blue-600 font-medium text-lg mb-6">🐧 神戶：動物與麵包超人 <span class="badge badge-green">Pass第2天</span></p>
+                    
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-icon shadow-md"><span class="text-xl">🐾</span></div>
+                            <h3 class="font-bold text-lg text-gray-700 mb-1">上午 | 與動物的零距離接觸</h3>
+                            <p class="mb-2"><span class="font-semibold">08:00 - 09:00：</span>JR 鶴橋 → 大阪 → (JR神戶線 新快速) → 三ノ宮。</p>
+                             <div class="collapsible mt-4 border border-gray-200 rounded-lg">
+                                <button class="toggle-button flex items-center justify-between w-full bg-blue-50 p-3 text-left font-semibold text-blue-800">
+                                    <span>JR 交通工具 deep dive</span>
+                                    <svg class="chevron w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                                </button>
+                                <div class="details-content bg-white p-4 text-sm border-t border-gray-200">
+                                    <ul class="list-disc list-inside space-y-2">
+                                        <li><span class="font-semibold">車程:</span> 約 35–40 分鐘。</li>
+                                        <li><span class="font-semibold">費用:</span> 由 JR Pass 覆蓋。</li>
+                                        <li><span class="font-semibold">備註:</span> 大阪站搭乘往「姬路／網干」方向之「新快速」。</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <p class="mt-4"><span class="font-semibold">09:00 - 13:30：</span>三宮轉乘 <span class="font-bold">Port Liner 港灣人工島線</span> 至「計算科學中心」站，出站即達 <span class="font-bold">神戶動物王國</span>。</p>
+                            <div class="collapsible mt-4 border border-gray-200 rounded-lg">
+                                <button class="toggle-button flex items-center justify-between w-full bg-blue-50 p-3 text-left font-semibold text-blue-800">
+                                    <span>🚇 Port Liner 提醒</span>
+                                    <svg class="chevron w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                                </button>
+                                <div class="details-content bg-white p-4 text-sm border-t border-gray-200">
+                                    <ul class="list-disc list-inside space-y-2">
+                                        <li>車程約 14 分鐘；單程成人約 250 日圓。<span class="text-red-600 font-bold">私鐵需自費</span>。</li>
+                                        <li>無人駕駛電車，坐車頭視野極佳。</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="collapsible mt-4 border border-gray-200 rounded-lg">
+                                <button class="toggle-button flex items-center justify-between w-full bg-indigo-50 p-3 text-left font-semibold text-indigo-800">
+                                    <span>🌟 景點 Spotlight：神戶動物王國</span>
+                                    <svg class="chevron w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                                </button>
+                                <div class="details-content bg-white p-4 text-sm border-t border-gray-200">
+                                    <ul class="list-disc list-inside space-y-2">
+                                        <li>開放時間：<span class="font-bold">10:00–17:00</span>（多數週四休園，行前請再確認）。</li>
+                                        <li>門票：成人約 2,200 日圓；可留意含車票的套票。</li>
+                                        <li>特色：近距離餵食水豚、袋鼠，親子互動性高。</li>
+                                        <li>官網：tw.kobe-oukoku.com</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-icon shadow-md"><span class="text-xl">午</span></div>
+                            <h3 class="font-bold text-lg text-gray-700 mb-1">午餐時光</h3>
+                            <p class="mb-2"><span class="font-semibold">13:30 - 14:30：</span>動物王國內或回三宮周邊用餐。</p>
+                             <div class="collapsible mt-4 border border-gray-200 rounded-lg">
+                                <button class="toggle-button flex items-center justify-between w-full bg-orange-50 p-3 text-left font-semibold text-orange-800">
+                                    <span>🍽️ 午餐選擇</span>
+                                    <svg class="chevron w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                                </button>
+                                <div class="details-content bg-white p-4 text-sm border-t border-gray-200">
+                                    <ul class="list-disc list-inside space-y-2 mb-2">
+                                        <li><span class="font-semibold">Steakland Kobe：</span>高 CP 值神戶牛午間套餐。</li>
+                                        <li><span class="font-semibold">赤萬：</span>味噌醬搭配的神戶餃子名店。</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-icon shadow-md"><span class="text-xl">🍞</span></div>
+                            <h3 class="font-bold text-lg text-gray-700 mb-1">下午 | 童趣世界與親子購物</h3>
+                            <p class="mb-2"><span class="font-semibold">14:30 - 17:00：</span>JR 三ノ宮 → 一站至 JR 神戶，步行至 <span class="font-bold">Harborland umie</span>。參觀 <span class="font-bold">神戶麵包超人兒童博物館</span> 與親子商場。</p>
+                            <div class="collapsible mt-4 border border-gray-200 rounded-lg">
+                                <button class="toggle-button flex items-center justify-between w-full bg-indigo-50 p-3 text-left font-semibold text-indigo-800">
+                                    <span>🌟 Spotlight：麵包超人兒童博物館</span>
+                                    <svg class="chevron w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                                </button>
+                                <div class="details-content bg-white p-4 text-sm border-t border-gray-200">
+                                    <ul class="list-disc list-inside space-y-2">
+                                        <li>開放：10:00–18:00（最後入場 17:00）；商場免費入場。</li>
+                                        <li>門票：2,000–2,500 日圓。<span class="text-red-600 font-bold">需事先線上預約購票</span>。</li>
+                                        <li>官網：kobe-anpanman.jp</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <p class="mt-4"><span class="font-semibold">17:00 後：</span>馬賽克廣場看港口夕陽。</p>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <div class="timeline-icon shadow-md"><span class="text-xl">🥩</span></div>
+                            <h3 class="font-bold text-lg text-gray-700 mb-1">晚間 | 神戶牛晚餐與返程</h3>
+                            <p class="mb-2"><span class="font-semibold">18:00 後：</span>品嚐神戶牛；餐後 JR 返大阪。</p>
+                             <div class="collapsible mt-4 border border-gray-200 rounded-lg">
+                                <button class="toggle-button flex items-center justify-between w-full bg-orange-50 p-3 text-left font-semibold text-orange-800">
+                                    <span>🍽️ 晚餐選擇</span>
+                                    <svg class="chevron w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                                </button>
+                                <div class="details-content bg-white p-4 text-sm border-t border-gray-200">
+                                     <ul class="list-disc list-inside space-y-2">
+                                        <li><span class="font-semibold">Mouriya：</span>百年名店，品質穩定。</li>
+                                        <li><span class="font-semibold">Kobe Kaisaku：</span>Mosaic 內看夜景吃鯛魚釜飯。</li>
+                                    </ul>
+                                </div>
+                            </div>
+                             <div class="collapsible mt-4 border border-gray-200 rounded-lg">
+                                <button class="toggle-button flex items-center justify-between w-full bg-blue-50 p-3 text-left font-semibold text-blue-800">
+                                    <span>JR 返程路線</span>
+                                    <svg class="chevron w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                                </button>
+                                <div class="details-content bg-white p-4 text-sm border-t border-gray-200">
+                                    <ul class="list-disc list-inside space-y-2">
+                                        <li>JR 神戶／三ノ宮 → (新快速) → 大阪 → (環狀線) → 鶴橋。</li>
+                                        <li>車程約 35–40 分；JR Pass 覆蓋。</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Food & Souvenirs -->
+                    <div class="mt-8 pt-6 border-t border-gray-200">
+                        <h3 class="text-xl font-bold text-orange-600 mb-4">🍽️ 美食與伴手禮亮點</h3>
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <h4 class="font-semibold text-lg mb-2">特色美食</h4>
+                                <ul class="list-disc list-inside space-y-2 text-gray-700">
+                                    <li>神戶牛</li>
+                                    <li>港景餐廳與麵包名店</li>
+                                    <li>神戶餃子（味噌醬）</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-lg mb-2">推薦伴手禮</h4>
+                                <ul class="list-disc list-inside space-y-2 text-gray-700">
+                                    <li>神戶布丁</li>
+                                    <li>Frantz 魔法壺布丁／草莓松露巧克力</li>
+                                    <li>風月堂 法蘭蘇 GAUFRES</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Day 3 (Expo 2025) -->
+            <div id="day3" class="content-section">
+                <div class="bg-white rounded-2xl shadow-lg p-6 md:p-8">
+                    <h2 class="text-2xl font-bold mb-1">第3天：10/7 (週二)</h2>
+                    <p class="text-blue-600 font-medium text-lg mb-6">🌐 大阪：2025 大阪・關西世博 <span class="badge badge-green">Pass第3天</span></p>
+
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-icon shadow-md"><span class="text-xl">🚀</span></div>
+                            <h3 class="font-bold text-lg text-gray-700 mb-1">上午 | 走進未來世界</h3>
+                            <p class="mb-2"><span class="font-semibold">08:00 - 09:00：</span>鶴橋 → (JR環狀線・內環) 森之宮 → (大阪地下鐵中央線) → <span class="font-bold">夢洲站</span>，出站即是會場。</p>
+                             <div class="collapsible mt-4 border border-gray-200 rounded-lg">
+                                <button class="toggle-button flex items-center justify-between w-full bg-blue-50 p-3 text-left font-semibold text-blue-800">
+                                    <span>🚇 交通重點</span>
+                                    <svg class="chevron w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                                </button>
+                                <div class="details-content bg-white p-4 text-sm border-t border-gray-200">
+                                    <ul class="list-disc list-inside space-y-2">
+                                        <li>JR 路段由 Pass 覆蓋；<span class="font-bold">地鐵中央線需自費</span>（約 290 日圓/單程）。</li>
+                                        <li>依當日人潮，會場可能實施入場動線調整，提早 30–45 分鐘抵達較安心。</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <p class="mt-4"><span class="font-semibold">09:00 - 12:00：</span>上午入場探索展區。</p>
+                             <div class="collapsible mt-4 border border-gray-200 rounded-lg">
+                                <button class="toggle-button flex items-center justify-between w-full bg-indigo-50 p-3 text-left font-semibold text-indigo-800">
+                                    <span>🌟 Expo 2025 重要資訊</span>
+                                    <svg class="chevron w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                                </button>
+                                <div class="details-content bg-white p-4 text-sm border-t border-gray-200">
+                                    <ul class="list-disc list-inside space-y-2">
+                                        <li><span class="font-bold">開放時間：</span>會場 09:00–22:00；多數展館營運至約 21:00。</li>
+                                        <li><span class="font-bold">門票：</span>一般一日券成人約 7,500 日圓，另有平日券／夜間券等票種。</li>
+                                        <li><span class="font-bold">入場流程：</span>購票後需預約<span class="font-bold">入場日期與時段</span>；熱門展館採事前或當日系統登記／抽選。</li>
+                                        <li><span class="font-bold">夜間活動：</span>日落後有「One World, One Planet」燈光與無人機秀。</li>
+                                        <li><span class="font-bold">工具：</span>建議安裝官方 App／使用「This Week at EXPO」查詢即時資訊。</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-icon shadow-md"><span class="text-xl">🍱</span></div>
+                            <h3 class="font-bold text-lg text-gray-700 mb-1">午餐</h3>
+                            <p class="mb-2"><span class="font-semibold">12:00 - 13:00：</span>會場美食廣場或各國館輕食。</p>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-icon shadow-md"><span class="text-xl">🏙️</span></div>
+                            <h3 class="font-bold text-lg text-gray-700 mb-1">下午 | 繼續逛展</h3>
+                            <p class="mb-2"><span class="font-semibold">13:00 - 17:00：</span>依預約的熱門展館安排動線。</p>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-icon shadow-md"><span class="text-xl">🌌</span></div>
+                            <h3 class="font-bold text-lg text-gray-700 mb-1">晚間 | 回梅田 & 夜景</h3>
+                            <p class="mb-2"><span class="font-semibold">17:00 - 18:30：</span>夢洲 → (地鐵中央線) 森之宮 → (JR環狀線 外環) 梅田/大阪站。</p>
+                            <div class="collapsible mt-4 border border-gray-200 rounded-lg">
+                                <button class="toggle-button flex items-center justify-between w-full bg-orange-50 p-3 text-left font-semibold text-orange-800">
+                                    <span>🍽️ 晚餐選擇 (梅田)</span>
+                                    <svg class="chevron w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                                </button>
+                                <div class="details-content bg-white p-4 text-sm border-t border-gray-200">
+                                    <ul class="list-disc list-inside space-y-2">
+                                        <li>滝見小路「きじ」大阪燒</li>
+                                        <li>新梅田食道街「はなだこ」章魚燒</li>
+                                        <li>阪急／阪神／大丸百貨餐廳街</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <p class="mt-4">飯後可登 <span class="font-bold">梅田藍天大廈 空中庭園</span> 看夜景。</p>
+                        </div>
+                    </div>
+
+                    <!-- Food & Souvenirs -->
+                    <div class="mt-8 pt-6 border-t border-gray-200">
+                        <h3 class="text-xl font-bold text-orange-600 mb-4">🍽️ 美食與伴手禮亮點</h3>
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <h4 class="font-semibold text-lg mb-2">特色美食</h4>
+                                <ul class="list-disc list-inside space-y-2 text-gray-700">
+                                    <li>世博會場各國館美食</li>
+                                    <li>梅田滝見小路／食道街</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-lg mb-2">推薦伴手禮</h4>
+                                <ul class="list-disc list-inside space-y-2 text-gray-700">
+                                    <li>世博官方紀念品（MYAKU-MYAKU）</li>
+                                    <li>Grand Calbee、Bâton d'or、ÉCHIRÉ</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Day 4 (Kyoto) -->
+            <div id="day4" class="content-section">
+                <div class="bg-white rounded-2xl shadow-lg p-6 md:p-8">
+                    <h2 class="text-2xl font-bold mb-1">第4天：10/8 (週三)</h2>
+                    <p class="text-blue-600 font-medium text-lg mb-6">⛩️ 京都：伏見稻荷大社 <span class="badge badge-green">Pass第4天</span></p>
+            
+                    <div class="timeline">
+                        <!-- Activity 1 -->
+                        <div class="timeline-item">
+                            <div class="timeline-icon shadow-md"><span class="text-xl">🌄</span></div>
+                            <h3 class="font-bold text-lg text-gray-700 mb-1">上午 | 鳥居隧道</h3>
+                            <p class="mb-2"><span class="font-semibold">07:30 - 09:00：</span>鶴橋 → (JR環狀線 外環) 大阪 → (JR京都線 新快速) 京都 → (JR奈良線 普通) 稻荷。</p>
+                            <div class="collapsible mt-4 border border-gray-200 rounded-lg">
+                                <button class="toggle-button flex items-center justify-between w-full bg-blue-50 p-3 text-left font-semibold text-blue-800">
+                                    <span>JR 交通工具 deep dive</span>
+                                    <svg class="chevron w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                                </button>
+                                <div class="details-content bg-white p-4 text-sm border-t border-gray-200">
+                                    <ul class="list-disc list-inside space-y-2">
+                                        <li>車程約 60–70 分；全程 JR Pass 覆蓋。</li>
+                                        <li>稻荷站出口即是伏見稻荷入口。</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <p class="mt-4"><span class="font-semibold">09:00 - 11:30：</span>參拜伏見稻荷，步行鳥居山道。</p>
+                            <div class="collapsible mt-4 border border-gray-200 rounded-lg">
+                                <button class="toggle-button flex items-center justify-between w-full bg-indigo-50 p-3 text-left font-semibold text-indigo-800">
+                                    <span>🌟 景點 Spotlight：伏見稻荷大社</span>
+                                    <svg class="chevron w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                                </button>
+                                <div class="details-content bg-white p-4 text-sm border-t border-gray-200">
+                                    <ul class="list-disc list-inside space-y-2">
+                                        <li>24 小時開放；參拜免費。</li>
+                                        <li>授與所約 08:30–16:30。</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+            
+                        <!-- Activity 2 -->
+                        <div class="timeline-item">
+                            <div class="timeline-icon shadow-md"><span class="text-xl">午</span></div>
+                            <h3 class="font-bold text-lg text-gray-700 mb-1">午餐與轉乘</h3>
+                            <p class="mb-2"><span class="font-semibold">11:30 - 14:00：</span>京阪本線「伏見稻荷」 → 「清水五条」，清水寺周邊午餐。</p>
+                             <div class="collapsible mt-4 border border-gray-200 rounded-lg">
+                                <button class="toggle-button flex items-center justify-between w-full bg-blue-50 p-3 text-left font-semibold text-blue-800">
+                                    <span>🚇 私鐵段提醒</span>
+                                    <svg class="chevron w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                                </button>
+                                <div class="details-content bg-white p-4 text-sm border-t border-gray-200">
+                                    <ul class="list-disc list-inside space-y-2">
+                                        <li>此段為私鐵，<span class="font-bold">JR Pass 不適用</span>；單程約 220 日圓。</li>
+                                        <li>效率高，省時省力。</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="collapsible mt-4 border border-gray-200 rounded-lg">
+                                <button class="toggle-button flex items-center justify-between w-full bg-orange-50 p-3 text-left font-semibold text-orange-800">
+                                    <span>🍽️ 午餐建議 (清水寺/祇園)</span>
+                                    <svg class="chevron w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                                </button>
+                                <div class="details-content bg-white p-4 text-sm border-t border-gray-200">
+                                    <ul class="list-disc list-inside space-y-2">
+                                        <li>奧丹清水：湯豆腐</li>
+                                        <li>ひさご：親子丼</li>
+                                        <li>京都勝牛：炸牛排</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                             <div class="timeline-icon shadow-md"><span class="text-xl">🚶‍♀️</span></div>
+                            <h3 class="font-bold text-lg text-gray-700 mb-1">下午 | 東山散策</h3>
+                            <p class="mt-4"><span class="font-semibold">14:00 - 17:00：</span>清水寺 → 二年坂／三年坂。</p>
+                            <div class="collapsible mt-4 border border-gray-200 rounded-lg">
+                                <button class="toggle-button flex items-center justify-between w-full bg-indigo-50 p-3 text-left font-semibold text-indigo-800">
+                                    <span>🌟 清水寺資訊</span>
+                                    <svg class="chevron w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                                </button>
+                                <div class="details-content bg-white p-4 text-sm border-t border-gray-200">
+                                    <ul class="list-disc list-inside space-y-2">
+                                        <li>開放：多為 06:00–18:00</li>
+                                        <li>參拜費：約 500 日圓</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+            
+                        <!-- Activity 3 -->
+                        <div class="timeline-item">
+                             <div class="timeline-icon shadow-md"><span class="text-xl">🌃</span></div>
+                            <h3 class="font-bold text-lg text-gray-700 mb-1">晚間 | 晚餐與返程</h3>
+                            <p class="mb-2"><span class="font-semibold">17:00 後：</span>祇園/河原町用餐 → 巴士至 JR 京都 → (JR京都線 新快速) 大阪 → (環狀線) 鶴橋。</p>
+                            <div class="collapsible mt-4 border border-gray-200 rounded-lg">
+                                <button class="toggle-button flex items-center justify-between w-full bg-blue-50 p-3 text-left font-semibold text-blue-800">
+                                    <span>JR 返程提醒</span>
+                                    <svg class="chevron w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                                </button>
+                                <div class="details-content bg-white p-4 text-sm border-t border-gray-200">
+                                    <ul class="list-disc list-inside space-y-2">
+                                        <li>JR 路段由 Pass 覆蓋；市區巴士需自費（約 230 日圓）。</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            
+                    <!-- Food & Souvenirs -->
+                    <div class="mt-8 pt-6 border-t border-gray-200">
+                        <h3 class="text-xl font-bold text-orange-600 mb-4">🍽️ 美食與伴手禮亮點</h3>
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <h4 class="font-semibold text-lg mb-2">特色美食</h4>
+                                <ul class="list-disc list-inside space-y-2 text-gray-700">
+                                    <li>伏見稻荷：稻荷壽司、烤和牛串</li>
+                                    <li>清水寺：藤菜美醬油丸子、湯豆腐、親子丼</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-lg mb-2">推薦伴手禮</h4>
+                                <ul class="list-disc list-inside space-y-2 text-gray-700">
+                                    <li>抹茶甜點（茶之菓、祇園辻利）</li>
+                                    <li>生八橋、小倉山莊仙貝</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Day 5 (USJ) -->
+            <div id="day5" class="content-section">
+                <div class="bg-white rounded-2xl shadow-lg p-6 md:p-8">
+                    <h2 class="text-2xl font-bold mb-1">第5天：10/9 (週四)</h2>
+                    <p class="text-blue-600 font-medium text-lg mb-6">🎢 大阪：環球影城 <span class="badge badge-green">Pass第5天 (到期)</span></p>
+
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-icon shadow-md"><span class="text-xl">🎟️</span></div>
+                            <h3 class="font-bold text-lg text-gray-700 mb-1">全天 | 魔法、恐龍與超級瑪利歐</h3>
+                             <p class="mb-2"><span class="font-semibold">07:30 - 08:30：</span>JR 鶴橋 → (環狀線 內環) 西九条 → (夢咲線) 環球城。<span class="badge badge-green">JR Pass 覆蓋（最後一天）</span></p>
+                            <div class="collapsible mt-4 border border-gray-200 rounded-lg">
+                                <button class="toggle-button flex items-center justify-between w-full bg-blue-50 p-3 text-left font-semibold text-blue-800">
+                                    <span>JR 交通工具 deep dive</span>
+                                    <svg class="chevron w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                                </button>
+                                <div class="details-content bg-white p-4 text-sm border-t border-gray-200">
+                                    <ul class="list-disc list-inside space-y-2">
+                                        <li>車程約 25 分鐘；西九条月台對面常有直達列車。</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <p class="mt-4"><span class="font-semibold">08:30 - 閉園：</span>盡情暢玩 USJ！</p>
+                            <div class="collapsible mt-4 border border-gray-200 rounded-lg">
+                                <button class="toggle-button flex items-center justify-between w-full bg-indigo-50 p-3 text-left font-semibold text-indigo-800">
+                                    <span>🌟 USJ 重點：Super Nintendo World™</span>
+                                    <svg class="chevron w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                                </button>
+                                <div class="details-content bg-white p-4 text-sm border-t border-gray-200">
+                                    <ul class="list-disc list-inside space-y-2">
+                                        <li>進入園區需「<span class="font-bold">區域入場整理券 / Area Timed Entry Ticket</span>」。</li>
+                                        <li>取得方式：<span class="font-bold">官方 App</span>入園後領取、園內自助機，或購買附「<span class="font-bold">Advance Booking</span>」之 Express Pass。</li>
+                                        <li>熱門設施：Mario Kart、Yoshi's Adventure；高峰時段建議 Express Pass。</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-icon shadow-md"><span class="text-xl">🌙</span></div>
+                            <h3 class="font-bold text-lg text-gray-700 mb-1">晚間 | 晚餐與返程</h3>
+                            <p><span class="font-semibold">閉園後：</span>JR 返回鶴橋。可於 CityWalk 用餐或回飯店附近。</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Food & Souvenirs -->
+                    <div class="mt-8 pt-6 border-t border-gray-200">
+                        <h3 class="text-xl font-bold text-orange-600 mb-4">🍽️ 美食與伴手禮亮點</h3>
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <h4 class="font-semibold text-lg mb-2">特色美食</h4>
+                                <ul class="list-disc list-inside space-y-2 text-gray-700">
+                                    <li>奶油啤酒</li>
+                                    <li>小小兵／任天堂主題餐點</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-lg mb-2">推薦伴手禮</h4>
+                                <ul class="list-disc list-inside space-y-2 text-gray-700">
+                                    <li>魔杖／巧克力蛙／柏蒂全口味豆</li>
+                                    <li>小小兵周邊</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Day 6 (Nara) -->
+            <div id="day6" class="content-section">
+                <div class="bg-white rounded-2xl shadow-lg p-6 md:p-8">
+                    <h2 class="text-2xl font-bold mb-1">第6天：10/10 (週五)</h2>
+                    <p class="text-blue-600 font-medium text-lg mb-6">🦌 奈良：與可愛小鹿互動 <span class="badge badge-amber">Pass到期隔日</span></p>
+
+                    <div class="timeline">
+                        <!-- Activity 1 -->
+                        <div class="timeline-item">
+                            <div class="timeline-icon shadow-md"><span class="text-xl">🚃</span></div>
+                            <h3 class="font-bold text-lg text-gray-700 mb-1">上午 | 初見神鹿</h3>
+                            <p class="mb-2"><span class="font-semibold">08:00 - 09:30：</span>步行至 JR 鶴橋 → (環狀線) 天王寺 → (大和路快速) JR 奈良。</p>
+                             <div class="collapsible mt-4 border border-gray-200 rounded-lg">
+                                <button class="toggle-button flex items-center justify-between w-full bg-blue-50 p-3 text-left font-semibold text-blue-800">
+                                    <span>JR 票價提醒</span>
+                                    <svg class="chevron w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                                </button>
+                                <div class="details-content bg-white p-4 text-sm border-t border-gray-200">
+                                    <ul class="list-disc list-inside space-y-2">
+                                        <li>本日 Pass 已到期，JR 需自費。</li>
+                                        <li>鶴橋→奈良（經天王寺）單程成人約 <span class="font-bold">580 日圓</span>，40–45 分。</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <p class="mt-4"><span class="font-semibold">09:30 - 12:00：</span>步行至奈良公園，沿途經興福寺與五重塔；購買鹿仙貝餵食。</p>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-icon shadow-md"><span class="text-xl">午</span></div>
+                            <h3 class="font-bold text-lg text-gray-700 mb-1">午餐</h3>
+                            <p class="mb-2"><span class="font-semibold">12:00 - 13:00：</span>奈良公園周邊用餐（志津香釜飯／平宗柿葉壽司／麵鬪庵）。</p>
+                        </div>
+
+                        <!-- Activity 2 -->
+                        <div class="timeline-item">
+                            <div class="timeline-icon shadow-md"><span class="text-xl">🏯</span></div>
+                            <h3 class="font-bold text-lg text-gray-700 mb-1">下午 | 東大寺與春日大社</h3>
+                            <p class="mb-2"><span class="font-semibold">13:00 - 14:30：</span>東大寺大佛殿（門票約 600 日圓）。</p>
+                            <p class="mb-2"><span class="font-semibold">14:30 - 16:30：</span>步行至春日大社（本殿特別參拜約 500 日圓）。</p>
+                        </div>
+
+                        <!-- Activity 3 -->
+                        <div class="timeline-item">
+                            <div class="timeline-icon shadow-md"><span class="text-xl">🌃</span></div>
+                            <h3 class="font-bold text-lg text-gray-700 mb-1">傍晚 | 名物加購 & 返程</h3>
+                            <p class="mb-2"><span class="font-semibold">16:30 - 18:00：</span>回程途中購買 <span class="font-bold">中谷堂艾草麻糬</span>、<span class="font-bold">大佛布丁</span>。</p>
+                            <p class="mt-4"><span class="font-semibold">18:00 後：</span>JR 大和路快速 → 天王寺 → 環狀線 → 鶴橋。晚餐可在鶴橋韓國街或天王寺 MIO。</p>
+                        </div>
+                    </div>
+
+                    <!-- Food & Souvenirs -->
+                    <div class="mt-8 pt-6 border-t border-gray-200">
+                        <h3 class="text-xl font-bold text-orange-600 mb-4">🍽️ 美食與伴手禮亮點</h3>
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <h4 class="font-semibold text-lg mb-2">特色美食</h4>
+                                <ul class="list-disc list-inside space-y-2 text-gray-700">
+                                    <li>柿葉壽司、茶粥、葛餅</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-lg mb-2">推薦伴手禮</h4>
+                                <ul class="list-disc list-inside space-y-2 text-gray-700">
+                                    <li>大佛布丁</li>
+                                    <li>小鹿雜貨</li>
+                                    <li>奈良漬</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Day 7 -->
+            <div id="day7" class="content-section">
+                <div class="bg-white rounded-2xl shadow-lg p-6 md:p-8">
+                    <h2 class="text-2xl font-bold mb-1">第7天：10/11 (週六)</h2>
+                    <p class="text-blue-600 font-medium text-lg mb-6">🛍️ 臨空城 Outlet 與返程</p>
+
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-icon shadow-md"><span class="text-xl">🛒</span></div>
+                            <h3 class="font-bold text-lg text-gray-700 mb-1">上午 | 退房與最後採購</h3>
+                            <p class="mb-2"><span class="font-semibold">08:30 - 10:00：</span>退房。JR 鶴橋 → (環狀線 外環) 天王寺 → (關空快速) 臨空城。</p>
+                            <div class="collapsible mt-4 border border-gray-200 rounded-lg">
+                                <button class="toggle-button flex items-center justify-between w-full bg-blue-50 p-3 text-left font-semibold text-blue-800">
+                                    <span>JR 前往臨空城</span>
+                                    <svg class="chevron w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                                </button>
+                                <div class="details-content bg-white p-4 text-sm border-t border-gray-200">
+                                    <ul class="list-disc list-inside space-y-2">
+                                        <li>車程約 50–55 分；單程成人約 1,080 日圓。</li>
+                                        <li>可視行李量選擇在鶴橋或臨空城站寄物櫃。</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <p class="mt-4"><span class="font-semibold">10:00 - 13:00：</span>臨空城 Premium Outlets 購物。</p>
+                            <div class="collapsible mt-4 border border-gray-200 rounded-lg">
+                                <button class="toggle-button flex items-center justify-between w-full bg-orange-50 p-3 text-left font-semibold text-orange-800">
+                                    <span>🍽️ 午餐 (Outlet 美食街)</span>
+                                    <svg class="chevron w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                                </button>
+                                <div class="details-content bg-white p-4 text-sm border-t border-gray-200">
+                                    <ul class="list-disc list-inside space-y-2">
+                                        <li>花丸讚岐烏龍麵</li>
+                                        <li>Ippudo Ramen Express</li>
+                                        <li>まぐろ問屋 十代目 遠藤（鮪魚丼）</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="collapsible mt-4 border border-gray-200 rounded-lg">
+                                <button class="toggle-button flex items-center justify-between w-full bg-indigo-50 p-3 text-left font-semibold text-indigo-800">
+                                    <span>🌟 Outlet 小提醒</span>
+                                    <svg class="chevron w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                                </button>
+                                <div class="details-content bg-white p-4 text-sm border-t border-gray-200">
+                                    <ul class="list-disc list-inside space-y-2">
+                                        <li>營業時間：10:00–20:00。</li>
+                                        <li>南海電鐵「RINKU PREMIUM OUTLETS 電子票」需於<span class="font-bold">使用日前購買</span>，含折扣車票與 1,000 日圓購物券，可比較成本與轉乘便利性。</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-icon shadow-md"><span class="text-xl">🛫</span></div>
+                            <h3 class="font-bold text-lg text-gray-700 mb-1">下午 | 前往機場與返程</h3>
+                            <p class="mb-2"><span class="font-semibold">13:00 - 14:00：</span>Outlet 內午餐。</p>
+                            <p class="mb-2"><span class="font-semibold">14:00 - 14:30：</span>臨空城站 → 關西機場站（JR 或 南海電鐵皆可，<span class="font-bold">1 站約 5–6 分</span>，單程成人約 <span class="font-bold">370 日圓</span>）。</p>
+                            <div class="collapsible mt-4 border border-gray-200 rounded-lg">
+                                <button class="toggle-button flex items-center justify-between w-full bg-blue-50 p-3 text-left font-semibold text-blue-800">
+                                    <span>🚆 機場動線</span>
+                                    <svg class="chevron w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                                </button>
+                                <div class="details-content bg-white p-4 text-sm border-t border-gray-200">
+                                    <ul class="list-disc list-inside space-y-2">
+                                        <li>JR 關空快速／南海空港急行，月台相鄰，搭先發即可。</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <p class="mt-4"><span class="font-semibold">14:30 - 17:30：</span>關西機場辦理值機、托運與免稅採購。</p>
+                            <p class="mt-2"><span class="font-semibold">18:30 - 20:30：</span>搭乘返台航班，旅程結束。</p>
+                        </div>
+                    </div>
+
+                    <!-- Food & Souvenirs -->
+                    <div class="mt-8 pt-6 border-t border-gray-200">
+                        <h3 class="text-xl font-bold text-orange-600 mb-4">🍽️ 美食與伴手禮亮點 (機場最終採購)</h3>
+                        <ul class="list-disc list-inside space-y-2 text-gray-700 grid md:grid-cols-2 gap-x-6">
+                            <li>ROYCE' 生巧克力</li>
+                            <li>白色戀人</li>
+                            <li>京都北山 茶之菓</li>
+                            <li>神戶 Frantz 草莓松露巧克力</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Prep -->
+            <div id="prep" class="content-section">
+                <div class="bg-white rounded-2xl shadow-lg p-6 md:p-8 space-y-10">
+                    <div>
+                        <h2 class="text-2xl font-bold mb-4 text-gray-800">3.1 行動預訂清單</h2>
+                        <p class="mb-4">這趟旅程高度仰賴行前預訂。下表整理了關鍵時間點與建議：</p>
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-sm text-left text-gray-500">
+                                <thead class="text-xs text-gray-700 uppercase bg-gray-100">
+                                    <tr>
+                                        <th scope="col" class="px-6 py-3">預訂項目</th>
+                                        <th scope="col" class="px-6 py-3">預訂開放時間</th>
+                                        <th scope="col" class="px-6 py-3">建議行動日期</th>
+                                        <th scope="col" class="px-6 py-3">備註</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="bg-white border-b"><td class="px-6 py-4 font-medium">機票 & 住宿</td><td class="px-6 py-4">已開放</td><td class="px-6 py-4 font-bold">立即完成</td><td class="px-6 py-4">越早越好，價格更穩定。</td></tr>
+                                    <tr class="bg-gray-50 border-b"><td class="px-6 py-4 font-medium">JR關西廣域鐵路周遊券</td><td class="px-6 py-4">搭乘日前 90 天</td><td class="px-6 py-4">2025 年 7 月上旬</td><td class="px-6 py-4">JR 西日本官網或 Klook/KKday；連續 5 日使用。</td></tr>
+                                    <tr class="bg-white border-b"><td class="px-6 py-4 font-medium">2025 大阪世博門票</td><td class="px-6 py-4">已開放</td><td class="px-6 py-4 font-bold">立即購票並預約入場時段</td><td class="px-6 py-4">建議一日券；另有夜間券/平日券。</td></tr>
+                                    <tr class="bg-gray-50 border-b"><td class="px-6 py-4 font-medium">世博熱門展館</td><td class="px-6 py-4">參觀日前 2–3 個月起</td><td class="px-6 py-4">2025 年 7–8 月</td><td class="px-6 py-4">留意官網公告；當日亦可用 App 登記。</td></tr>
+                                    <tr class="bg-white border-b"><td class="px-6 py-4 font-medium">USJ 門票</td><td class="px-6 py-4">約 2 個月前起</td><td class="px-6 py-4">2025 年 8 月上旬</td><td class="px-6 py-4">確定入園日後購買。</td></tr>
+                                    <tr class="bg-gray-50 border-b"><td class="px-6 py-4 font-medium">USJ 快速通關</td><td class="px-6 py-4">約 1–2 個月前</td><td class="px-6 py-4">2025 年 8 月上旬</td><td class="px-6 py-4">選購含「Super Nintendo World 保證入場」之方案。</td></tr>
+                                    <tr class="bg-white border-b"><td class="px-6 py-4 font-medium">神戶麵包超人博物館</td><td class="px-6 py-4">通常可提前預約</td><td class="px-6 py-4">2025 年 10 月 7 日</td><td class="px-6 py-4"><span class="font-bold">務必</span>提前線上預約。</td></tr>
+                                    <tr class="bg-gray-50"><td class="px-6 py-4 font-medium">南海臨空城優惠電子票</td><td class="px-6 py-4">使用日前購買</td><td class="px-6 py-4">2025 年 10 月 9–10 日</td><td class="px-6 py-4">當日不可購買；含購物券。</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h2 class="text-2xl font-bold mb-4 text-gray-800">3.2 必備數位工具</h2>
+                        <ul class="list-disc list-inside space-y-2">
+                            <li><span class="font-semibold">EXPO 2025 Official：</span>查時段、即時資訊、展館當日登記。</li>
+                            <li><span class="font-semibold">USJ Official App：</span>領取區域入場整理券、看等待時間與表演時刻。</li>
+                            <li><span class="font-semibold">Google Maps：</span>步行/地鐵/JR 路線規劃。</li>
+                            <li><span class="font-semibold">NAVITIME / Jorudan：</span>精準時刻、票價與月台資訊。</li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h2 class="text-2xl font-bold mb-4 text-gray-800">3.3 交通票券總整表</h2>
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-sm text-left text-gray-500">
+                                <thead class="text-xs text-gray-700 uppercase bg-gray-100">
+                                    <tr>
+                                        <th class="px-6 py-3">路段/工具</th>
+                                        <th class="px-6 py-3">是否含於 JR Pass</th>
+                                        <th class="px-6 py-3">估算票價</th>
+                                        <th class="px-6 py-3">備註</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="bg-white border-b"><td class="px-6 py-4 font-medium">岡山機場巴士 → JR岡山</td><td class="px-6 py-4">不含</td><td class="px-6 py-4">約 ¥760</td><td class="px-6 py-4">機場站牌售票機</td></tr>
+                                    <tr class="bg-gray-50 border-b"><td class="px-6 py-4 font-medium">山陽新幹線 新大阪⇄岡山</td><td class="px-6 py-4"><span class="badge badge-green">含</span></td><td class="px-6 py-4">—</td><td class="px-6 py-4">建議搭 Sakura/Hikari/Kodama</td></tr>
+                                    <tr class="bg-white border-b"><td class="px-6 py-4 font-medium">Port Liner 三宮⇄計算科學中心</td><td class="px-6 py-4">不含</td><td class="px-6 py-4">約 ¥250/單程</td><td class="px-6 py-4">私鐵</td></tr>
+                                    <tr class="bg-gray-50 border-b"><td class="px-6 py-4 font-medium">京阪 伏見稻荷⇄清水五条</td><td class="px-6 py-4">不含</td><td class="px-6 py-4">約 ¥220/單程</td><td class="px-6 py-4">私鐵</td></tr>
+                                    <tr class="bg-white border-b"><td class="px-6 py-4 font-medium">USJ 夢咲線</td><td class="px-6 py-4"><span class="badge badge-green">含</span></td><td class="px-6 py-4">—</td><td class="px-6 py-4">西九条轉乘</td></tr>
+                                    <tr class="bg-gray-50 border-b"><td class="px-6 py-4 font-medium">JR 鶴橋⇄奈良 (10/10)</td><td class="px-6 py-4">不含</td><td class="px-6 py-4">約 ¥580/單程</td><td class="px-6 py-4">Pass 已到期</td></tr>
+                                    <tr class="bg-white border-b"><td class="px-6 py-4 font-medium">JR 天王寺⇄臨空城</td><td class="px-6 py-4">不含</td><td class="px-6 py-4">約 ¥1,080/單程</td><td class="px-6 py-4">關空快速</td></tr>
+                                    <tr class="bg-gray-50"><td class="px-6 py-4 font-medium">臨空城⇄關西機場</td><td class="px-6 py-4">不含</td><td class="px-6 py-4">約 ¥370/單程</td><td class="px-6 py-4">JR/南海皆可，一站</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <p class="footnote mt-3">金額為參考，實際以當日票價為準。</p>
+                    </div>
+
+                    <div>
+                        <h2 class="text-2xl font-bold mb-4 text-gray-800">3.4 伴手禮購物指南</h2>
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-sm text-left text-gray-500">
+                                <thead class="text-xs text-gray-700 uppercase bg-gray-100">
+                                    <tr>
+                                        <th scope="col" class="px-6 py-3">地區</th>
+                                        <th scope="col" class="px-6 py-3">必買伴手禮推薦</th>
+                                        <th scope="col" class="px-6 py-3">主要購買地點</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="bg-white border-b"><td class="px-6 py-4 font-medium">大阪</td><td class="px-6 py-4">老爺爺起司蛋糕、551 蓬萊肉包、呼吸巧克力、Bâton d'or、Grand Calbee</td><td class="px-6 py-4">難波、心齋橋、梅田各大百貨</td></tr>
+                                    <tr class="bg-gray-50 border-b"><td class="px-6 py-4 font-medium">奈良</td><td class="px-6 py-4">大佛布丁、中谷堂麻糬、柿葉壽司、小鹿商品</td><td class="px-6 py-4">近鐵奈良站商店街、東大寺周邊</td></tr>
+                                    <tr class="bg-white border-b"><td class="px-6 py-4 font-medium">京都</td><td class="px-6 py-4">抹茶甜點 (茶之菓、辻利)、生八橋、小倉山莊仙貝</td><td class="px-6 py-4">清水寺周邊、祇園、京都車站</td></tr>
+                                    <tr class="bg-gray-50 border-b"><td class="px-6 py-4 font-medium">神戶</td><td class="px-6 py-4">神戶布丁、Frantz 魔法壺布丁、風月堂法蘭蘇</td><td class="px-6 py-4">三宮、元町、神戶港</td></tr>
+                                    <tr class="bg-white border-b"><td class="px-6 py-4 font-medium">環球影城</td><td class="px-6 py-4">魔杖、小小兵泡麵、柏蒂豆、角色限定禮盒</td><td class="px-6 py-4">園區內各商店</td></tr>
+                                    <tr class="bg-gray-50"><td class="px-6 py-4 font-medium">關西機場</td><td class="px-6 py-4">ROYCE'、白色戀人、各地精選名產</td><td class="px-6 py-4">T1/T2 免稅店</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="note p-4 rounded-md">
+                        <p class="font-semibold">前瞻小建議：</p>
+                        <ul class="list-disc list-inside space-y-1 mt-2">
+                            <li>用 <span class="font-bold">ICOCA</span> 或信用卡感應付私鐵/地鐵段，減少購票時間。</li>
+                            <li>熱門餐廳盡量避開 12:00–13:00 高峰；親子行程安排 14:00–16:00 休息窗。</li>
+                            <li>雨天備案：神戶改逛 <span class="font-bold">umie</span> 室內商場；京都改走車站百貨。</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const tabs = document.querySelectorAll('.tab-button');
+            const contents = document.querySelectorAll('.content-section');
+
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    tabs.forEach(t => t.classList.remove('tab-active'));
+                    contents.forEach(c => c.classList.remove('active'));
+
+                    tab.classList.add('tab-active');
+                    const targetId = tab.getAttribute('data-target');
+                    document.getElementById(targetId).classList.add('active');
+                });
+            });
+
+            const toggles = document.querySelectorAll('.toggle-button');
+            toggles.forEach(toggle => {
+                toggle.addEventListener('click', () => {
+                    const content = toggle.nextElementSibling;
+                    const chevron = toggle.querySelector('.chevron');
+                    content.classList.toggle('open');
+                    chevron.classList.toggle('open');
+                });
+            });
+        });
+    </script>
+
+
+<style>
+/* Quick Map UI */
+#gmaps-quickbar{position:fixed;bottom:16px;left:50%;transform:translateX(-50%);display:flex;gap:.5rem;align-items:center;background:#0f172acc;color:#fff;padding:.5rem .75rem;border-radius:9999px;backdrop-filter:blur(6px);box-shadow:0 6px 18px rgba(0,0,0,.2);z-index:9999}
+#gmaps-quickbar input{width:16rem;max-width:50vw;background:#0b1220;color:#fff;border:1px solid #334155;border-radius:.5rem;padding:.4rem .6rem;font-size:.95rem}
+#gmaps-quickbar button{background:#22c55e;border:none;color:#0b1220;font-weight:700;padding:.5rem .8rem;border-radius:.6rem;cursor:pointer}
+#gmaps-quickbar .hint{font-size:.85rem;opacity:.9}
+a.map-link{display:inline-block;margin-left:.4rem;font-size:.8rem;background:#eab308;color:#0b1220;padding:.1rem .4rem;border-radius:.4rem;text-decoration:none}
+@media print{#gmaps-quickbar{display:none}}
+</style>
+<div id="gmaps-quickbar" role="region" aria-label="Google 地圖快速開啟">
+  <span class="hint">選取頁面任一地名 →</span>
+  <button id="gmaps-open">在 Google 地圖開啟</button>
+  <input id="gmaps-input" type="text" placeholder="或直接輸入地點關鍵字…">
+</div>
+<script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('./service-worker.js').catch(console.error);
+  });
+}
+
+(function() {
+  const btn = document.getElementById('gmaps-open');
+  const input = document.getElementById('gmaps-input');
+  function getSelectionText() {
+    const s = window.getSelection ? String(window.getSelection()) : '';
+    return s.trim();
+  }
+  function openMap(q) {
+    if (!q) return;
+    const url = 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(q);
+    window.open(url, '_blank', 'noopener,noreferrer');
+  }
+  btn.addEventListener('click', () => {
+    const selected = getSelectionText();
+    if (selected) openMap(selected);
+    else if (input.value.trim()) openMap(input.value.trim());
+    else alert('請先選取一段地名文字，或在輸入框鍵入地點關鍵字。');
+  });
+  input.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') { e.preventDefault(); btn.click(); }
+  });
+})();
+
+(function() {
+  const CANDIDATE_SELECTORS = 'li, p, h3, h4, h5, td';
+  const KEYWORDS = ['📍','地址','站','寺','神社','城','公園','通','百貨','美術館','博物館','市場','塔','港','溫泉'];
+  function mightBePlace(t) { return KEYWORDS.some(k => t.includes(k)) && t.replace(/\s/g,'').length >= 4; }
+  function extractQuery(t) {
+    const i = t.indexOf('📍');
+    if (i >= 0) t = t.slice(i+1);
+    t = t.replace(/[\[\](){}]|\s?\d{1,2}:\d{2}\s?/g, '');
+    t = t.replace(/^[\-–•·\s]+/, '').trim();
+    return t.length > 60 ? t.slice(0, 60) : t;
+  }
+  document.querySelectorAll(CANDIDATE_SELECTORS).forEach(el => {
+    if (el.dataset && el.dataset.mapInjected) return;
+    const txt = (el.innerText || '').trim();
+    if (!txt) return;
+    if (!mightBePlace(txt)) return;
+    const q = extractQuery(txt);
+    if (!q) return;
+    const a = document.createElement('a');
+    a.className = 'map-link';
+    a.textContent = '地圖';
+    a.rel = 'noopener noreferrer';
+    a.target = '_blank';
+    a.href = 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(q);
+    el.appendChild(a);
+    el.dataset.mapInjected = '1';
+  });
+})();
+</script>
+
+</body>
+</html>
