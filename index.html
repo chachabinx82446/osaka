@@ -25,7 +25,12 @@
         .badge-slate { background: #F1F5F9; color:#334155; }
         .note { background: #F8FAFC; border-left: 4px solid #2563eb; }
         .footnote { font-size: 0.875rem; color:#475569; }
-    </style>
+    
+        .badge-fast { background: #DBEAFE; color:#1D4ED8; }
+        .badge-danger { background:#FEE2E2; color:#991B1B; }
+        .callout-fast { background:#EFF6FF; border-left:4px solid #2563eb; padding:0.75rem; border-radius:0.5rem; }
+
+</style>
 <!-- ===== SEO / Social ===== -->
 <meta content="日本關西七日遊：大阪、京都、奈良、神戶 7 天行程安排，交通、美食與景點一次整理，支援離線、可安裝、快速開地圖導覽。" name="description"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
@@ -60,11 +65,16 @@
 <h1 class="text-4xl md:text-5xl font-bold text-gray-800 tracking-tight">日本關西七日遊</h1>
 <p class="text-lg text-blue-600 mt-2 font-semibold">2025.10.05 - 2025.10.11</p>
 </header>
+<div class="callout-fast my-4 text-sm text-blue-900">
+<div class="font-semibold mb-1">⏱️ 本檔已依「<b>最快到達</b>」優先更新</div>
+<ul class="list-disc list-inside">
+<li>若「最速」路線與 <b>JR Pass</b> 規則衝突，將以效率為先，相關票價請另行支付（文內已標示）。</li>
+<li>同時保留「<span class="badge badge-slate">Pass 優先</span>」備用動線，供彈性切換。</li>
+</ul>
+</div>
 <!-- Tabs Navigation -->
 <nav class="flex flex-wrap justify-center border-b border-gray-200 mb-8 -mx-4 px-4" id="tabs">
 <button class="tab-button py-3 px-3 sm:px-4 text-sm md:text-base text-gray-500 border-b-2 border-transparent hover:border-gray-300 hover:text-gray-700 transition-colors duration-200 tab-active" data-target="day1">第 1 天</button>
-
-
 <button class="tab-button py-3 px-3 sm:px-4 text-sm md:text-base text-gray-500 border-b-2 border-transparent hover:border-gray-300 hover:text-gray-700 transition-colors duration-200" data-target="day2">第 2 天</button>
 <button class="tab-button py-3 px-3 sm:px-4 text-sm md:text-base text-gray-500 border-b-2 border-transparent hover:border-gray-300 hover:text-gray-700 transition-colors duration-200" data-target="day3">第 3 天</button>
 <button class="tab-button py-3 px-3 sm:px-4 text-sm md:text-base text-gray-500 border-b-2 border-transparent hover:border-gray-300 hover:text-gray-700 transition-colors duration-200" data-target="day4">第 4 天</button>
@@ -158,7 +168,7 @@
 <!-- Activity 3 -->
 <div class="timeline-item">
 <div class="timeline-icon shadow-md"><span class="text-xl">🏨</span></div>
-<p class="mb-2"><span class="font-semibold">19:00 - 20:00：</span>新大阪 → (JR京都線) 大阪 → (JR大阪環狀線 外環) 鶴橋，步行至「ESLEAD酒店-大阪鶴橋」入住。</p>
+<p class="mb-2"><span class="font-semibold">19:00 - 20:00：</span>新大阪 → (JR京都線) 大阪 → （JR大阪環狀線 內回／京橋方向）鶴橋，步行至「ESLEAD酒店-大阪鶴橋」入住。</p>
 <div class="collapsible mt-4 border border-gray-200 rounded-lg">
 <button class="toggle-button flex items-center justify-between w-full bg-blue-50 p-3 text-left font-semibold text-blue-800">
 <span>JR 轉乘小抄</span>
@@ -169,7 +179,7 @@
 <li><span class="font-semibold">路線:</span> 新大阪 → 大阪 → 鶴橋</li>
 <li><span class="font-semibold">車程:</span> 約 20–25 分鐘。</li>
 <li><span class="font-semibold">費用:</span> 由 JR Pass 覆蓋。</li>
-<li><span class="font-semibold">訣竅:</span> 大阪站換乘時留意「大阪環狀線・外環(天王寺方向)」指示。</li>
+<li><span class="font-semibold">訣竅:</span> 大阪站換乘時留意「大阪環狀線・內回（京橋方向）」指示。</li>
 </ul>
 </div>
 </div>
@@ -181,7 +191,7 @@
 <p class="mb-2"><span class="font-semibold">20:00 - 22:00：</span>安頓好行李後搭地鐵前往難波/心齋橋。晚餐於道頓堀，之後逛 <span class="font-bold">心齋橋筋商店街</span>、<span class="font-bold">難波</span>、<span class="font-bold">Namba City</span> 等。</p>
 <div class="collapsible mt-4 border border-gray-200 rounded-lg">
 <button class="toggle-button flex items-center justify-between w-full bg-blue-50 p-3 text-left font-semibold text-blue-800">
-<span>🚇 地鐵 &amp; 票價提醒</span>
+<span>🚇 地鐵 &amp; 票價提醒 <span class="badge badge-fast ml-2">市區最速</span></span>
 <svg class="chevron w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
 </button>
 <div class="details-content bg-white p-4 text-sm border-t border-gray-200">
@@ -274,7 +284,7 @@
 <div class="font-bold mb-1">🧭 方案B｜岡山站出發（非新幹線／省錢）</div>
 <ol class="list-decimal list-inside space-y-1">
 <li><b>JR在來線</b>：岡山 →（新快速／快速等）→ <b>大阪</b>（約2.5小時，通常需轉乘）。</li>
-<li><b>大阪 → 鶴橋</b>：<b>JR大阪環狀線</b>（外環／天王寺方向）→ <b>鶴橋</b>（約15–20分鐘）。</li>
+<li><b>大阪 → 鶴橋</b>：<b>JR大阪環狀線</b>（內回／京橋方向）→ <b>鶴橋</b>（約15–20分鐘）。</li>
 <li><b>鶴橋站 → 飯店</b>：同上，<b>4號出口</b>步行1分鐘。</li>
 </ol>
 </div>
@@ -296,25 +306,25 @@
 </div>
 <!-- 道頓堀晚餐（自動插入） -->
 <section id="day1-dinner" style="margin: 2rem 0; line-height: 1.7;">
-  <h2 style="font-size: 1.4rem; margin-bottom: 0.6rem;">第1天｜晚間：道頓堀美食與購物初探（20:00–22:00）</h2>
-  <ul>
-    <li><strong>主餐 A：</strong><strong>螃蟹道樂 道頓堀本店（かに道楽 道頓堀本店）</strong><br>
-      建議 20:15 左右到店取號；若候位超過 45 分鐘，改走 Plan B。<br>
+<h2 style="font-size: 1.4rem; margin-bottom: 0.6rem;">第1天｜晚間：道頓堀美食與購物初探（20:00–22:00）</h2>
+<ul>
+<li><strong>主餐 A：</strong><strong>螃蟹道樂 道頓堀本店（かに道楽 道頓堀本店）</strong><br/>
+      建議 20:15 左右到店取號；若候位超過 45 分鐘，改走 Plan B。<br/>
       用餐時間抓 60–90 分鐘；預算以套餐為主（約 ¥3,500–¥8,000/人，視選擇）。</li>
-    <li><strong>Plan B（彈性小吃）：</strong><strong>章魚燒道樂 WANAKA 道頓崛店</strong><br>
-      先買一盒邊走邊吃或在道頓堀河畔、小橋邊快速補給（約 10–15 分鐘）。<br>
+<li><strong>Plan B（彈性小吃）：</strong><strong>章魚燒道樂 WANAKA 道頓崛店</strong><br/>
+      先買一盒邊走邊吃或在道頓堀河畔、小橋邊快速補給（約 10–15 分鐘）。<br/>
       再視排隊情況回頭卡位「螃蟹道樂」，或直接進入逛街動線（心齋橋筋商店街 → 戎橋/固力果看板一帶）。</li>
-  </ul>
-  <details style="margin-top: 0.8rem;">
-    <summary style="cursor: pointer;">小技巧與動線</summary>
-    <ul>
-      <li><strong>親子版小技巧：</strong>先用 WANAKA「墊肚子」，再去螃蟹道樂等候；情緒穩定、體力更耐久。</li>
-      <li><strong>動線提示：</strong>地鐵千日前線「鶴橋」→「難波」（約 6 分）；地鐵不含在 JR Pass 內，請用 ICOCA/信用卡感應。</li>
-      <li><strong>打卡點：</strong>固力果看板與螃蟹道樂巨大螃蟹招牌在同一帶，吃完走 3–5 分鐘就能拍夜景。</li>
-      <li><strong>避開尖峰：</strong>19:00–20:00 最擁擠；20:30 後友善度上升。</li>
-      <li><strong>付款：</strong>小吃店偏好現金（準備零錢較快）。</li>
-    </ul>
-  </details>
+</ul>
+<details style="margin-top: 0.8rem;">
+<summary style="cursor: pointer;">小技巧與動線</summary>
+<ul>
+<li><strong>親子版小技巧：</strong>先用 WANAKA「墊肚子」，再去螃蟹道樂等候；情緒穩定、體力更耐久。</li>
+<li><strong>動線提示：</strong>地鐵千日前線「鶴橋」→「難波」（約 6 分）；地鐵不含在 JR Pass 內，請用 ICOCA/信用卡感應。</li>
+<li><strong>打卡點：</strong>固力果看板與螃蟹道樂巨大螃蟹招牌在同一帶，吃完走 3–5 分鐘就能拍夜景。</li>
+<li><strong>避開尖峰：</strong>19:00–20:00 最擁擠；20:30 後友善度上升。</li>
+<li><strong>付款：</strong>小吃店偏好現金（準備零錢較快）。</li>
+</ul>
+</details>
 </section></div>
 <!-- Day 2 (Kobe) -->
 <div class="content-section" id="day2">
@@ -339,7 +349,7 @@
 </ul>
 </div>
 </div>
-<p class="mt-4"><span class="font-semibold">09:00 - 13:30：</span>三宮轉乘 <span class="font-bold">Port Liner 港灣人工島線</span> 至「計算科學中心」站，出站即達 <span class="font-bold">神戶動物王國</span>。</p>
+<p class="mt-4"><span class="font-semibold">09:00 - 13:30：</span>三宮轉乘 <span class="font-bold">Port Liner 港灣人工島線</span> 至「計算科學センター（神戸どうぶつ王國・『富岳』前）」站，出站即達 <span class="font-bold">神戶動物王國</span>。</p>
 <div class="collapsible mt-4 border border-gray-200 rounded-lg">
 <button class="toggle-button flex items-center justify-between w-full bg-blue-50 p-3 text-left font-semibold text-blue-800">
 <span>🚇 Port Liner 提醒</span>
@@ -421,7 +431,7 @@
 </div>
 <div class="collapsible mt-4 border border-gray-200 rounded-lg">
 <button class="toggle-button flex items-center justify-between w-full bg-blue-50 p-3 text-left font-semibold text-blue-800">
-<span>JR 返程路線</span>
+<span>JR 返程路線 <span class="badge badge-fast ml-2">建議最速</span></span>
 <svg class="chevron w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
 </button>
 <div class="details-content bg-white p-4 text-sm border-t border-gray-200">
@@ -456,6 +466,108 @@
 </div>
 </div>
 </div>
+<section class="mt-6">
+<h3 class="text-lg font-semibold mt-4">
+    🌅 早晨出發｜鶴橋 → 神戶動物王國（最速動線）
+    <span class="badge badge-fast ml-2">最速</span>
+</h3>
+<div class="mt-2">
+<ol class="list-decimal list-inside leading-relaxed text-sm">
+<li><b>JR 鶴橋</b> → <b>（大阪環狀線 內回／京橋方向）</b> → <b>大阪</b>（約 12–15 分）。</li>
+<li><b>JR 新快速</b>：<b>大阪</b> → <b>三ノ宮</b>（約 20–22 分；班距密集）。</li>
+<li><b>Port Liner</b>：<b>三宮（ポートライナー）</b> → <b>計算科學センター（神戸どうぶつ王国・『富岳』前）</b>（約 14–17 分）。</li>
+<li>步行數分鐘進入園區（入口明顯）。</li>
+</ol>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-3 mt-3 text-sm">
+<div class="border rounded-xl p-3">
+<div class="font-semibold mb-1">⏱️ 參考時間（例：10:00 抵園）</div>
+<ul class="list-disc list-inside">
+<li>09:15 鶴橋 出發 → 09:27 抵達 大阪</li>
+<li>09:30 搭新快速 → 09:52 抵達 三ノ宮</li>
+<li>09:57 搭 Port Liner → 10:12 抵達 館前站</li>
+</ul>
+</div>
+<div class="border rounded-xl p-3">
+<div class="font-semibold mb-1">🎫 票券＆小撇步</div>
+<ul class="list-disc list-inside">
+<li><b>JR 新快速</b>與大阪環狀線可用 <b>JR Pass</b>；<b>Port Liner</b>為私鐵（需自費）。</li>
+<li>新快速班距短，<b>優先搭直達三ノ宮</b>的班次。</li>
+</ul>
+</div>
+</div>
+<div class="text-xs text-slate-600 mt-2">備用（自費）：鶴橋 → 近鐵至大阪難波 → <b>阪神難波線</b> 直通 神戶三宮（視等候約 40–45 分），再轉 Port Liner。</div>
+</section>
+<section class="mt-6">
+<h3 class="text-lg font-semibold mt-4">
+  🕑 神戶動物王國 → 神戶麵包超人兒童博物館（最速動線／14:00 準時抵達）
+  <span class="badge badge-fast ml-2">最速</span>
+</h3>
+<div class="callout-fast mt-2 text-sm">
+<div class="font-bold">最晚出園時間：<span class="text-blue-700">13:15</span></div>
+<div>抓 40–45 分移動＆轉乘緩衝（Port Liner＋JR＋步行），可於 <b>14:00</b> 準時到館。</div>
+</div>
+<div class="mt-3">
+<ol class="list-decimal list-inside leading-relaxed">
+<li><b>步行</b> 出園 → <b>計算科學センター（神戸どうぶつ王国・『富岳』前）</b>（Port Liner 入口）。</li>
+<li><b>Port Liner</b> 直達 <b>三宮</b>（約 14–17 分，班距 5–10 分）。</li>
+<li><b>JR</b>：<b>三ノ宮</b> → <b>神戶</b>（約 3–5 分，班距密集）。</li>
+<li><b>步行</b> 神戶站 → <b>神戶麵包超人兒童博物館 &amp; 商場</b>（約 8–10 分；沿 Harborland 指標）。</li>
+</ol>
+</div>
+<div class="mt-2 text-xs text-slate-600">
+  轉乘訣竅：Port Liner 抵達三宮（ポートライナー）後，依指標前往 <b>JR 三ノ宮站</b>；JR 抵達 <b>神戶站</b> 後，循 <b>Harborland</b> 指標步行即可。
+</div>
+<div class="mt-3 grid grid-cols-1 md:grid-cols-2 gap-3 text-sm">
+<div class="border rounded-xl p-3">
+<div class="font-semibold mb-1">⏱️ 參考時間軸（建議）</div>
+<ul class="list-disc list-inside">
+<li>13:10 離開園區準備 → 13:15 出園</li>
+<li>13:20 搭上 Port Liner → 13:35 抵達三宮</li>
+<li>13:40 搭上 JR → 13:45 抵達神戶站</li>
+<li>13:55 抵達博物館 → 14:00 取票入場</li>
+</ul>
+</div>
+<div class="border rounded-xl p-3">
+<div class="font-semibold mb-1">🎫 票券提醒</div>
+<ul class="list-disc list-inside">
+<li>此段含 <b>Port Liner</b>（私鐵，<b>JR Pass 不含</b>）。</li>
+<li>JR 三ノ宮→神戶 可用 <b>JR Pass</b>；若無 Pass，車資亦不高。</li>
+</ul>
+</div>
+</div>
+</section>
+<section class="mt-6">
+<h3 class="text-lg font-semibold mt-4">
+    🌙 晚間返程｜神戶麵包超人兒童博物館 → 鶴橋（最速動線）
+    <span class="badge badge-fast ml-2">最速</span>
+</h3>
+<div class="mt-2">
+<ol class="list-decimal list-inside leading-relaxed text-sm">
+<li>步行 <b>神戶麵包超人兒童博物館</b> → <b>JR 神戶站</b>（約 8–10 分）。</li>
+<li><b>JR 快速／新快速</b>：<b>神戶</b> → <b>大阪</b>（約 22–28 分）。</li>
+<li><b>大阪環狀線 內回／京橋方向</b>：<b>大阪</b> → <b>鶴橋</b>（約 12–15 分）。</li>
+</ol>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-3 mt-3 text-sm">
+<div class="border rounded-xl p-3">
+<div class="font-semibold mb-1">⏱️ 參考時間（例：18:00 離館）</div>
+<ul class="list-disc list-inside">
+<li>18:00 離館 → 18:10 抵達 JR 神戶站</li>
+<li>18:15 搭 新快速 → 18:40 抵達 大阪</li>
+<li>18:45 搭 內回 → 19:00 抵達 鶴橋</li>
+</ul>
+</div>
+<div class="border rounded-xl p-3">
+<div class="font-semibold mb-1">🎫 票券＆備用</div>
+<ul class="list-disc list-inside">
+<li>全程 JR 可用 <b>JR Pass</b>；若改走 <b>阪神難波線</b> → 大阪難波 → 近鐵至鶴橋，則為私鐵自費。</li>
+<li>遇人潮時段，<b>新快速</b>優先；若等候過長，可改搭快速或普通車再補上。</li>
+</ul>
+</div>
+</div>
+</section>
+
 <div class="mt-4 p-4 rounded-lg bg-emerald-50 border border-emerald-200">
 <p class="text-sm text-emerald-900"><b>票券提示：</b>此日若以 <b>JR 普通／新快速</b> 串聯城市，建議納入 <b>JR關西地區鐵路周遊券 3 日（連續）</b> 的三天之一；涉及地鐵／私鐵路段則以交通 IC 支付或調整動線改走 JR。</p>
 </div>
@@ -476,11 +588,11 @@
 <li><b>提早 1–1.5 小時</b>到園區大門（旺季常<b>比官網更早</b>開園）。</li>
 <li>吃好早餐；園內餐飲價格高且易排隊。</li>
 <li>大件行李先寄放：入口處/車站周邊有寄物櫃。</li>
-</ul>
+<li><b>最快入園策略：</b>比官網時間更早到門口排隊，遇提前開園即可先行入場。<span class="badge badge-fast">最速</span></li></ul>
 </div>
 <div class="timeline-item">
 <div class="timeline-icon shadow-md"><span class="text-xl">🚄</span></div>
-<h3 class="font-bold text-lg text-gray-700 mb-1">交通 | 前往 USJ</h3>
+<h3 class="font-bold text-lg text-gray-700 mb-1">交通 | 前往 USJ <span class="badge badge-fast ml-2">最速策略</span></h3>
 <p class="mb-2"><span class="font-semibold">07:00 - 08:15：</span>鶴橋 →（<b>JR大阪環狀線 內環</b>）→ 西九条 →（<b>JR櫻島線/夢咲線</b>）→ <b>Universal City</b>，步行 5–8 分抵園區大門。<span class="badge badge-green">JR 票券覆蓋</span></p>
 <div class="note rounded-md p-3 mt-2"><p class="footnote">註：JR 路段可用「JR 關西地區鐵路周遊券 3 日」或「JR 關西廣域 5 日」；本日動線不需地鐵/私鐵。</p></div>
 </div>
@@ -593,7 +705,7 @@
 <div class="timeline-item">
 <div class="timeline-icon shadow-md"><span class="text-xl">🌄</span></div>
 <h3 class="font-bold text-lg text-gray-700 mb-1">上午 | 鳥居隧道</h3>
-<p class="mb-2"><span class="font-semibold">07:30 - 09:00：</span>鶴橋 → (JR環狀線 外環) 大阪 → (JR京都線 新快速) 京都 → (JR奈良線 普通) 稻荷。</p>
+<p class="mb-2"><span class="font-semibold">07:30 - 09:00：</span>鶴橋 → （JR大阪環狀線 經京橋） 大阪 → (JR京都線 新快速) 京都 → (JR奈良線 普通) 稻荷。</p>
 <div class="collapsible mt-4 border border-gray-200 rounded-lg">
 <button class="toggle-button flex items-center justify-between w-full bg-blue-50 p-3 text-left font-semibold text-blue-800">
 <span>JR 交通工具 deep dive</span>
@@ -675,7 +787,7 @@
 <p class="mb-2"><span class="font-semibold">17:00 後：</span>祇園/河原町用餐 → 巴士至 JR 京都 → (JR京都線 新快速) 大阪 → (環狀線) 鶴橋。</p>
 <div class="collapsible mt-4 border border-gray-200 rounded-lg">
 <button class="toggle-button flex items-center justify-between w-full bg-blue-50 p-3 text-left font-semibold text-blue-800">
-<span>JR 返程提醒</span>
+<span>JR 返程提醒 <span class="badge badge-fast ml-2">最速優先</span></span>
 <svg class="chevron w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
 </button>
 <div class="details-content bg-white p-4 text-sm border-t border-gray-200">
@@ -864,44 +976,38 @@
 <p class="mb-2"><span class="font-semibold">13:00 - 14:30：</span>東大寺大佛殿（門票約 600 日圓）。</p>
 <p class="mb-2"><span class="font-semibold">14:30 - 16:30：</span>步行至春日大社（本殿特別參拜約 500 日圓）。</p>
 </div><div class="timeline-item"><div class="timeline-icon shadow-md"><span class="text-xl">🍰</span></div><h3 class="font-bold text-lg text-gray-700 mb-1">午後甜點 | 空氣蛋糕（Kuki Cake）</h3><p class="mb-2">從東大寺漫步經飛火野草原，前往奈良超人氣甜點店，作為散步後的輕盈收尾。</p><ul class="list-disc list-inside space-y-2"><li><b>招牌必吃：</b> 空氣蛋糕（空気ケーキ）。夾鮮奶油或抹茶餡，口感輕盈蓬鬆，常配當季水果。</li><li><b>其他推薦：</b> 蒙布朗、水果塔、古都華草莓短蛋糕。</li><li><b>氛圍與位置：</b> 木樑天花、綠意露台，位於靜謐住宅角落；離奈良公園／春日大社近。</li><li><b>營業資訊：</b> 週一、四、五、六、日 09:00–18:00；公休：週二、週三。</li><li><b>地址：</b> 日本〒630-8301 奈良縣奈良市高畑町738-2 ふれあい会館 1F　<b>電話：</b> +81 742-27-2828</li><li><b>官網：</b> <a href="http://www.kuukicake.com/" rel="noopener" target="_blank">http://www.kuukicake.com/</a></li></ul><p class="text-sm text-amber-700 mt-2">提醒：遇週二、週三公休可調整到前後天或改為近鄰咖啡館。</p></div>
-
 <div class="collapsible mt-4 border border-gray-200 rounded-lg">
-  <button class="toggle-button flex items-center justify-between w-full bg-blue-50 p-3 text-left font-semibold text-blue-800">
-    <span>🧭 交通資訊</span>
-    <svg class="chevron w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
-    </svg>
-  </button>
-  <div class="details-content bg-white p-4 text-sm border-t border-gray-200">
-    <div class="font-semibold mb-1">從東大寺／春日大社過去</div>
-    <ul class="list-disc list-inside space-y-2 mb-3">
-      <li><b>徒步（推薦景觀）</b>：東大寺南側 → 經飛火野草原 → 高畑町方向 → 抵達「ふれあい會館 1F」。約 <b>15–20 分</b>、<b>1.1–1.3 km</b>，結尾多為平緩人行道。</li>
-      <li><b>巴士（省體力）</b>：奈良交通「春日大社表參道／春日大社本殿」搭往<b>高畑町／破石町</b>方向，於<b>破石町</b>或<b>高畑町</b>下車，步行 <b>3–6 分</b>。奈良市區均一票價成人約 <b>¥220</b>。</li>
-    </ul>
-
-    <div class="font-semibold mb-1">自車站出發</div>
-    <ul class="list-disc list-inside space-y-2 mb-3">
-      <li><b>近鐵奈良站</b>：徒步 <b>20–22 分</b>（約 1.6 km），或站前巴士至 <b>破石町／高畑町</b> 下車步行 3–6 分。</li>
-      <li><b>JR 奈良站</b>：徒步約 <b>30–35 分</b>；建議站前巴士至 <b>高畑町</b>，車程 <b>10–12 分</b>＋步行 3–5 分。</li>
-    </ul>
-
-    <div class="font-semibold mb-1">離店返程（回大阪／鶴橋）</div>
-    <ul class="list-disc list-inside space-y-2 mb-3">
-      <li><b>JR 線</b>：步行或巴士 → <b>JR 奈良</b> → <b>大和路快速</b> 直達 <b>天王寺／大阪</b> → <b>大阪環狀線</b> → <b>鶴橋</b>。<b>約 55–65 分</b>（視轉乘），<span class="badge badge-green">JR Pass 覆蓋</span>。</li>
-      <li><b>近鐵線（更少轉乘）</b>：步行或巴士 → <b>近鐵奈良</b> → 近鐵急行／準急 → <b>鶴橋</b> <b>約 39–45 分</b>；<span class="text-red-600 font-bold">近鐵非 JR，需自費</span>。</li>
-    </ul>
-
-    <div class="rounded-md bg-slate-50 border p-3 text-slate-700">
-      <ul class="list-disc list-inside space-y-1">
-        <li><b>票券提示</b>：JR 路段可用「JR 關西地區 3 日」或「JR 關西廣域 5 日」。<b>奈良交通巴士／近鐵／地鐵</b>不含在 JR 票券內。</li>
-        <li><b>親子／無障礙</b>：飛火野草原部分為土徑碎石，不利推車；如帶推車可改走高畑町市區人行道。</li>
-        <li><b>營業日</b>：店家<strong>週二、週三公休</strong>；若遇公休，改走近鄰咖啡館或調整至前後日。</li>
-      </ul>
-    </div>
-  </div>
+<button class="toggle-button flex items-center justify-between w-full bg-blue-50 p-3 text-left font-semibold text-blue-800">
+<span>🧭 交通資訊</span>
+<svg class="chevron w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+<div class="details-content bg-white p-4 text-sm border-t border-gray-200">
+<div class="font-semibold mb-1">從東大寺／春日大社過去</div>
+<ul class="list-disc list-inside space-y-2 mb-3">
+<li><b>徒步（推薦景觀）</b>：東大寺南側 → 經飛火野草原 → 高畑町方向 → 抵達「ふれあい會館 1F」。約 <b>15–20 分</b>、<b>1.1–1.3 km</b>，結尾多為平緩人行道。</li>
+<li><b>巴士（省體力）</b>：奈良交通「春日大社表參道／春日大社本殿」搭往<b>高畑町／破石町</b>方向，於<b>破石町</b>或<b>高畑町</b>下車，步行 <b>3–6 分</b>。奈良市區均一票價成人約 <b>¥220</b>。</li>
+</ul>
+<div class="font-semibold mb-1">自車站出發</div>
+<ul class="list-disc list-inside space-y-2 mb-3">
+<li><b>近鐵奈良站</b>：徒步 <b>20–22 分</b>（約 1.6 km），或站前巴士至 <b>破石町／高畑町</b> 下車步行 3–6 分。</li>
+<li><b>JR 奈良站</b>：徒步約 <b>30–35 分</b>；建議站前巴士至 <b>高畑町</b>，車程 <b>10–12 分</b>＋步行 3–5 分。</li>
+</ul>
+<div class="font-semibold mb-1">離店返程（回大阪／鶴橋）</div>
+<ul class="list-disc list-inside space-y-2 mb-3">
+<li><b>JR 線</b>：步行或巴士 → <b>JR 奈良</b> → <b>大和路快速</b> 直達 <b>天王寺／大阪</b> → <b>大阪環狀線</b> → <b>鶴橋</b>。<b>約 55–65 分</b>（視轉乘），<span class="badge badge-green">JR Pass 覆蓋</span>。</li>
+<li><b>近鐵線（更少轉乘）</b>：步行或巴士 → <b>近鐵奈良</b> → 近鐵急行／準急 → <b>鶴橋</b> <b>約 39–45 分</b>；<span class="text-red-600 font-bold">近鐵非 JR，需自費</span>。</li>
+</ul>
+<div class="rounded-md bg-slate-50 border p-3 text-slate-700">
+<ul class="list-disc list-inside space-y-1">
+<li><b>票券提示</b>：JR 路段可用「JR 關西地區 3 日」或「JR 關西廣域 5 日」。<b>奈良交通巴士／近鐵／地鐵</b>不含在 JR 票券內。</li>
+<li><b>親子／無障礙</b>：飛火野草原部分為土徑碎石，不利推車；如帶推車可改走高畑町市區人行道。</li>
+<li><b>營業日</b>：店家<strong>週二、週三公休</strong>；若遇公休，改走近鄰咖啡館或調整至前後日。</li>
+</ul>
 </div>
-
-
+</div>
+</div>
 <!-- Activity 3 -->
 <div class="timeline-item">
 <div class="timeline-icon shadow-md"><span class="text-xl">🌃</span></div>
@@ -947,7 +1053,7 @@
 <div class="timeline-item">
 <div class="timeline-icon shadow-md"><span class="text-xl">🛒</span></div>
 <h3 class="font-bold text-lg text-gray-700 mb-1">上午 | 退房與最後採購</h3>
-<p class="mb-2"><span class="font-semibold">08:30 - 10:00：</span>退房。JR 鶴橋 → (環狀線 外環) 天王寺 → (關空快速) 臨空城。</p>
+<p class="mb-2"><span class="font-semibold">08:30 - 10:00：</span>退房。JR 鶴橋 → （JR大阪環狀線 依當下最短換乘）天王寺 → (關空快速) 臨空城。</p>
 <div class="collapsible mt-4 border border-gray-200 rounded-lg">
 <button class="toggle-button flex items-center justify-between w-full bg-blue-50 p-3 text-left font-semibold text-blue-800">
 <span>JR 前往臨空城</span>
@@ -1078,7 +1184,7 @@
 <tbody>
 <tr class="bg-white border-b"><td class="px-6 py-4 font-medium">岡山機場巴士 → JR岡山</td><td class="px-6 py-4">不含</td><td class="px-6 py-4">約 ¥760</td><td class="px-6 py-4">機場站牌售票機</td></tr>
 <tr class="bg-gray-50 border-b"><td class="px-6 py-4 font-medium">山陽新幹線 新大阪⇄岡山</td><td class="px-6 py-4"><span class="badge badge-green">含</span></td><td class="px-6 py-4">—</td><td class="px-6 py-4">建議搭 Sakura/Hikari/Kodama</td></tr>
-<tr class="bg-white border-b"><td class="px-6 py-4 font-medium">Port Liner 三宮⇄計算科學中心</td><td class="px-6 py-4">不含</td><td class="px-6 py-4">約 ¥250/單程</td><td class="px-6 py-4">私鐵</td></tr>
+<tr class="bg-white border-b"><td class="px-6 py-4 font-medium">Port Liner 三宮⇄計算科學センター（神戸どうぶつ王國・『富岳』前）</td><td class="px-6 py-4">不含</td><td class="px-6 py-4">約 ¥250/單程</td><td class="px-6 py-4">私鐵</td></tr>
 <tr class="bg-gray-50 border-b"><td class="px-6 py-4 font-medium">京阪 伏見稻荷⇄清水五条</td><td class="px-6 py-4">不含</td><td class="px-6 py-4">約 ¥220/單程</td><td class="px-6 py-4">私鐵</td></tr>
 <tr class="bg-white border-b"><td class="px-6 py-4 font-medium">USJ 夢咲線</td><td class="px-6 py-4"><span class="badge badge-green">含</span></td><td class="px-6 py-4">—</td><td class="px-6 py-4">西九条轉乘</td></tr>
 <tr class="bg-gray-50 border-b"><td class="px-6 py-4 font-medium">JR 鶴橋⇄奈良 (10/10)</td><td class="px-6 py-4">不含</td><td class="px-6 py-4">約 ¥580/單程</td><td class="px-6 py-4">Pass 已到期</td></tr>
